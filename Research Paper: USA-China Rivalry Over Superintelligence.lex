@@ -7,9 +7,9 @@
 \usepackage{microtype}
 \usepackage{hyperref}
 
-\title{Titre du document}
+\title{En quoi la rivalité technologique entre la Chine et Les État-Unis est elle une menace pour la geopolitique futur ?}
 \author{Auteur}
-\date{\today}
+\date{Date}
 
 \begin{document}
 
