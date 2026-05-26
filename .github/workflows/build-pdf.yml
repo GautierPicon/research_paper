@@ -28,7 +28,8 @@ jobs:
           if [ -z "$CHANGED" ]; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
-            echo "files=$(echo $CHANGED | tr '\n' ' ')" >> $GITHUB_OUTPUT
+            ENCODED=$(echo "$CHANGED" | base64 -w 0)
+            echo "files_b64=${ENCODED}" >> $GITHUB_OUTPUT
             echo "has_changes=true" >> $GITHUB_OUTPUT
           fi
 
@@ -49,7 +50,9 @@ jobs:
         run: |
           set -e
           ERRORS=0
-          for LEX_FILE in ${{ steps.changed.outputs.files }}; do
+
+          while IFS= read -r LEX_FILE; do
+            [ -z "$LEX_FILE" ] && continue
             BASE=$(basename "$LEX_FILE" .lex)
             cp "$LEX_FILE" "/tmp/${BASE}.tex"
             latexmk -pdf -interaction=nonstopmode -outdir=/tmp "/tmp/${BASE}.tex" || {
@@ -58,7 +61,8 @@ jobs:
               continue
             }
             mv "/tmp/${BASE}.pdf" "NOM_DU_PDF.pdf"
-          done
+          done < <(echo "${{ steps.changed.outputs.files_b64 }}" | base64 -d)
+
           [ $ERRORS -eq 0 ] || exit 1
 
       - name: Configure git identity
@@ -75,4 +79,4 @@ jobs:
             exit 0
           fi
           git commit -m "ci: update PDF"
-          git push origin HEAD:${{ github.ref_name }}    
+          git push origin HEAD:${{ github.ref_name }}
