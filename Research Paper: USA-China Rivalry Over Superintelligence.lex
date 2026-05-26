@@ -7,7 +7,7 @@
 \usepackage{microtype}
 \usepackage{hyperref}
 
-\title{En quoi la rivalité technologique entre la Chine et Les État-Unis est elle une menace pour la geopolitique futur ?}
+\title{En quoi la rivalité technologique entre la Chine et les État-Unis est-elle une menace pour la geopolitique futur ?}
 \author{Gautier Picon}
 \date{29 Juin 2026}
 
