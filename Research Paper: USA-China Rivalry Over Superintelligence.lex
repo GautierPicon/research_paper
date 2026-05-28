@@ -10,7 +10,7 @@
 \usepackage{graphicx}
 \usepackage{titlesec}
 \usepackage{setspace}
-\usepackage{lmodern}
+\usepackage{fix-cm}
 
 \definecolor{bleu}{RGB}{20,40,120}
 
