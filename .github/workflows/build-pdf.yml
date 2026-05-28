@@ -49,6 +49,7 @@ jobs:
             texlive-latex-recommended \
             texlive-latex-extra \
             texlive-fonts-recommended \
+            texlive-fonts-extra \
             texlive-lang-french \
             latexmk
 
