@@ -1,4 +1,4 @@
-# Research Paper — US-China rivalry over superintelligence
+# Research Paper — US and China rivalry over superintelligence
 
 This repository contains a research paper written in French on the technological rivalry between China and the United States, which addresses the following question: “In what ways does the technological rivalry between China and the United States pose a threat to future geopolitics?”
 
