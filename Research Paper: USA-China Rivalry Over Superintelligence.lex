@@ -26,7 +26,7 @@
 
     \vspace{1cm}
 
-    \rule{12cm}{0.4pt}
+    \rule{15cm}{0.4pt}
 
     \vspace{1cm}
 
