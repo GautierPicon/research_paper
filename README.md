@@ -4,25 +4,24 @@ This repository contains a research paper written in French on the technological
 
 ## Read the Paper
 
+- Read it online on the website: [https://paper.gautierpicon.com](https://paper.gautierpicon.com)
 - Download it by clicking here: [DOWNLOAD](https://github.com/GautierPicon/research_paper-us_china_rivalry_over_superintelligence/raw/main/Research%20Paper%3A%20USA-China%20Rivalry%20Over%20Superintelligence.pdf)
-- View it online on : [https://gautierpicon.github.io/research_paper1/](https://gautierpicon.github.io/research_paper1/)
+- Read it online on the Github repository: [https://github.com/GautierPicon/research_paper1/blob/main/Research%20Paper%3A%20USA-China%20Rivalry%20Over%20Superintelligence.pdf](https://github.com/GautierPicon/research_paper1/blob/main/Research%20Paper%3A%20USA-China%20Rivalry%20Over%20Superintelligence.pdf)
 
-## Contents
+## How to edit the PDF
 
-- Main
-    - **`.github/workflows/build-pdf.yml`** — Automation that detects changes in the .lex file to automatically generate an updated PDF, which is then added to the [repository](https://github.com/GautierPicon/research_paper1/blob/main/Research%20Paper%3A%20USA-China%20Rivalry%20Over%20Superintelligence.pdf) and deployed to the [website](https://gautierpicon.github.io/research_paper1/)
-    - **`.lex`** — LaTeX source file for the PDF document
-    - **`.pdf`** — PDF automatically generated from the .lex source file
-- gh-pages
-    - **`.pdf`** — PDF uploaded to the website
-    - **`index.html`** — ensures that the URL points to the PDF
+Edit the .tex file and compile it into a PDF so that the commit includes both updated files in the main branch
 
-## CI/CD
+### VSCode
 
-Every time a `.lex` file is pushed to `main`, GitHub Actions:
+Install the [LaTeX Workshop](https://open-vsx.org/vscode/item?itemName=James-Yu.latex-workshop) extension. It compiles the `.tex` file automatically on save and outputs the PDF alongside it. No extra setup needed.
 
-1. Compiles the `.lex` file into a PDF using `latexmk`
-2. Commits the generated PDF to the `main` branch
-3. Deploys the PDF to **GitHub Pages** (`gh-pages` branch)
+### Other editors / command line
 
-The PDF is then accessible directly via [the repository’s GitHub Pages URL](https://gautierpicon.github.io/research_paper1/).
+Make sure you have `latexmk` installed (included in most TeX distributions like TeX Live or MiKTeX), then run:
+
+```sh
+latexmk -pdf "Research Paper: USA-China Rivalry Over Superintelligence.tex"
+```
+
+This outputs the PDF in the same directory as the `.tex` file.
