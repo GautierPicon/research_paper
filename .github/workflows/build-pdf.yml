@@ -104,18 +104,22 @@ jobs:
           git fetch origin gh-pages 2>/dev/null || true
           git checkout gh-pages 2>/dev/null || git checkout --orphan gh-pages
 
-          rm -f *.pdf index.html
-
+          rm -f *.pdf
           cp /tmp/pdfs/*.pdf .
 
           PDF_NAME=$(basename "$(ls *.pdf | head -1)")
-          cat > index.html << HTMLEOF
+
+          if [ -f index.html ]; then
+            sed -i "s|content=\"0; url=./[^\"]*\"|content=\"0; url=./${PDF_NAME}\"|" index.html
+          else
+            cat > index.html << HTMLEOF
           <!DOCTYPE html>
           <html>
             <head><meta http-equiv="refresh" content="0; url=./${PDF_NAME}"></head>
             <body></body>
           </html>
           HTMLEOF
+          fi
 
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
