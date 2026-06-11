@@ -20,6 +20,10 @@ This repository contains a research paper written in French on the technological
     
     It also has other advantages: if someone sees changes that need to be made, they can submit a pull request. And if someone wants to do the same for another PDF, they can fork my project and replace the .tex file.
 
+- ### The whole document is about AI. Why does the discussion only refer to a "technological race"? Why not be more specific? 
+
+    I’ve chosen not to mention AI so as not to put off both those who dislike it on moral grounds and those who are fed up with hearing about it all the time. My paper deals with AI, but from a perspective that is less commonly discussed by the general public and which deserves to be more widely known. 
+
 ## Contributing to the projet
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to contribute.
