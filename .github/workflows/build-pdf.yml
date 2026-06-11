@@ -101,8 +101,8 @@ jobs:
           mkdir /tmp/pdfs
           find . -name "*.pdf" -not -path "./.git/*" -exec cp {} /tmp/pdfs/ \;
 
-          git fetch origin gh-pages 2>/dev/null || true
-          git checkout gh-pages 2>/dev/null || git checkout --orphan gh-pages
+          git fetch origin gh-pages
+          git checkout gh-pages
 
           rm -f *.pdf
           cp /tmp/pdfs/*.pdf .
